@@ -43,36 +43,26 @@ Analysis rules:
 
 Analyze this user need: ${userNeed}`;
 
-        // Simular progresso inicial
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        const message = await anthropic.messages.create({
+        // Real processing steps
+        const stream = await anthropic.messages.create({
             model: 'claude-3-haiku-20240307',
             max_tokens: 300,
             messages: [{
                 role: 'user',
                 content: systemPrompt
-            }]
+            }],
+            stream: true
         });
 
-        console.log('Anthropic response received');
-        
-        const rawResponse = message.content[0].text;
-        console.log('Raw response:', rawResponse);
-        
-        const response = rawResponse.trim();
-        console.log('Trimmed response:', response);
-
-        // Simular mais tempo nas etapas iniciais
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        let fullResponse = '';
+        for await (const chunk of stream) {
+            if (chunk.type === 'content_block_delta') {
+                fullResponse += chunk.delta.text;
+            }
+        }
 
         return NextResponse.json({ 
-            response,
-            success: true,
-            progress: {
-                startTime: Date.now(),
-                steps: ['interpreting', 'matching', 'thinking']
-            }
+            response: fullResponse
         });
 
     } catch (error) {

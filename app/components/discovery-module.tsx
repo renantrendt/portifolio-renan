@@ -74,6 +74,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
         
         setIsLoading(true);
         setAnalysisStatus('interpreting');
+        setCurrentTypedText('');
         
         try {
             console.log('Making API request...');
@@ -95,34 +96,54 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
                 throw new Error(data.error || 'Failed to analyze');
             }
 
+            // Update status to show we're now displaying the response
+            setAnalysisStatus('answering');
+            setIsTyping(true);
+
             const cleanResponse = data.response.trim();
-            simulateTyping(cleanResponse);
+            let index = 0;
+
+            // Simulate natural typing speed
+            const typingInterval = setInterval(() => {
+                if (index < cleanResponse.length) {
+                    const nextChar = cleanResponse[index];
+                    setCurrentTypedText(prev => prev + nextChar);
+                    index++;
+                } else {
+                    clearInterval(typingInterval);
+                    setIsTyping(false);
+                    setIsLoading(false);
+                    setAnalysisStatus('idle');
+                }
+            }, 30); // Faster typing speed
+
+            return () => clearInterval(typingInterval);
         } catch (error) {
             console.error('Error in handleAnalyze:', error);
-            simulateTyping("I apologize, but I'm having trouble analyzing your request right now. Please try again later.");
+            setCurrentTypedText("I apologize, but I'm having trouble analyzing your request right now. Please try again later.");
             setIsLoading(false);
             setAnalysisStatus('idle');
-        }
-    };
-
-    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && !isLoading && userNeed.trim()) {
-            handleAnalyze();
         }
     };
 
     const getStatusMessage = () => {
         switch (analysisStatus) {
             case 'interpreting':
-                return ' Sending your needs to AI...';
+                return 'Analyzing your request...';
             case 'matching':
-                return ' Matching with his experience...';
+                return 'Finding relevant experience...';
             case 'thinking':
-                return ' Thinking about how he can help...';
+                return 'Preparing response...';
             case 'answering':
-                return ' Crafting a response...';
+                return 'Here is my analysis...';
             default:
                 return '';
+        }
+    };
+
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && !isLoading && userNeed.trim()) {
+            handleAnalyze();
         }
     };
 
