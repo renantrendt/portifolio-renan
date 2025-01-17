@@ -74,7 +74,6 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
         
         setIsLoading(true);
         setAnalysisStatus('interpreting');
-        setCurrentTypedText('');
         
         try {
             console.log('Making API request...');
@@ -96,9 +95,11 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
                 throw new Error(data.error || 'Failed to analyze');
             }
 
-            // Update status to show we're now displaying the response
+            // Update status and clear input for new questions
             setAnalysisStatus('answering');
             setIsTyping(true);
+            setIsLoading(false);
+            setUserNeed(''); // Clear input for new question
 
             const cleanResponse = data.response.trim();
             let index = 0;
@@ -112,16 +113,17 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
                 } else {
                     clearInterval(typingInterval);
                     setIsTyping(false);
-                    setIsLoading(false);
                     setAnalysisStatus('idle');
                 }
             }, 30); // Faster typing speed
 
             return () => clearInterval(typingInterval);
+
         } catch (error) {
             console.error('Error in handleAnalyze:', error);
             setCurrentTypedText("I apologize, but I'm having trouble analyzing your request right now. Please try again later.");
             setIsLoading(false);
+            setIsTyping(false);
             setAnalysisStatus('idle');
         }
     };
