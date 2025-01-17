@@ -36,7 +36,7 @@ export default function Home() {
       projects: [
         { name: "VC Scout (A16z & Bain)", url: "", description: "Enabled OpenBabylon to raise from A16z and Bain Capital Ventures. OpenBabylon customize LLMs for underrepresented languages." },
         { name: "WhitelabelAI", url: "https://whitelabel.ai/", description: "I worked as an AI NLP researcher, enhancing the software's reasoning capabilities, and as a Consultant supporting a strategic pivot that converted the first 25 enterprise customers and secured $117,000 in ARR." },
-        { name: "Good.inc (formerly Visto.bio)", url: "https://good.inc/", description: "Founded a CPG company that generates $1.5M/year with a 30% profit margin, leveraging a patent co-developed with a UC San Diego researcher." },
+        { name: "Good.inc (formerly Visto.bio)", url: "https://good.inc/", description: "Founded a CPG company in the longevity space, by discovering that the root of body odor and some hormone imbalance are cause by deodorants, we could patent a solution that helps people live healthier by treating their clothes and at the same time reduce environmental impact by reducing their washing frequency. The company generates $1.5M/year with a 30% profit margin, leveraging a patent co-developed with a UC San Diego researcher." },
         { name: "Financial Turnaround Consulting", description: "Provided independent consultancy services, supporting companies in financial restructuring across diverse industries." },
         { name: "Cloud Stores", url: "https://youtu.be/OuR552j1gto?si=lylh1VfyQhK4fXV6&t=90", description: "Developed a self-service autonomous brick-and-mortar store powered by RFID, IoT, and computer vision, which was featured in Vice Magazine." }
       ]
