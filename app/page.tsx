@@ -101,6 +101,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <header className="pt-20 pb-10 text-center space-y-4">
         <h1 className="text-4xl font-bold">Renan Serrano</h1>
+        <p className="text-lg text-muted-foreground">I'm Italian, born and raised in Brazil, living in San Francisco</p>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
       #Growth #Thinkering #Product #AI #Engineering #Deeptech
         </p>
