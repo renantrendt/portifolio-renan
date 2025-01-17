@@ -2,16 +2,17 @@ import { Anthropic } from '@anthropic-ai/sdk';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-    if (!process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY) {
+    if (!process.env.ANTHROPIC_API_KEY) {
+        console.error("Anthropic API key not found in environment variables");
         return NextResponse.json(
-            { error: "API key not configured" },
+            { error: "Server configuration error. Please contact the administrator." },
             { status: 500 }
         );
     }
 
     try {
         const anthropic = new Anthropic({
-            apiKey: process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY || '',
+            apiKey: process.env.ANTHROPIC_API_KEY,
         });
 
         const { userNeed, careerData } = await request.json();
