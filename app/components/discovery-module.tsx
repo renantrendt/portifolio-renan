@@ -155,9 +155,9 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
                                         <span className="text-sm text-white/80">{getStatusMessage()}</span>
                                     </div>
                                     <div className="absolute bottom-0 left-0 h-1 bg-white/30 animate-fill-left w-full transform origin-left" 
-                                         style={{
+                                        style={{
                                             animation: 'fill 8s linear forwards'
-                                         }}
+                                        }}
                                     />
                                 </>
                             ) : (
@@ -166,11 +166,6 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
                         </Button>
                     </div>
                 </div>
-                {isTyping && (
-                    <div className="text-xl font-medium text-center py-4">
-                        {currentTypedText || '\u200B'}
-                    </div>
-                )}
             </CardContent>
         </Card>
     );
