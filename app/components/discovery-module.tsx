@@ -174,7 +174,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
         <Card className="w-full mb-6">
             <CardHeader>
                 <CardTitle className="text-xl text-center">
-                    {currentTypedText || 'Write here what challenge you are facing and discover if I can help you with.'}
+                    {currentTypedText || 'Skills Match: jot down the challenge you are facing, and AI (Claude) will determine if my skills match your needs'}
                 </CardTitle>
             </CardHeader>
             <CardContent>
@@ -207,7 +207,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
                                     />
                                 </>
                             ) : (
-                                'Discover'
+                                'Match'
                             )}
                         </Button>
                     </div>
