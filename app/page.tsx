@@ -148,6 +148,9 @@ export default function Home() {
           />
         </div>
       </main>
+      <footer className="text-center text-gray-500 text-sm py-4 mt-8">
+        Made in SF using V0, Vercel, Next.js, Windsurf and Claude
+      </footer>
     </div>
   )
 }
