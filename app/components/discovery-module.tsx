@@ -17,6 +17,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
     const [currentTypedText, setCurrentTypedText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [analysisStatus, setAnalysisStatus] = useState<AnalysisStatus>('idle');
+    const [typingInterval, setTypingInterval] = useState<NodeJS.Timeout | null>(null);
 
     // Efeito para simular a progressão dos estados de análise
     useEffect(() => {
@@ -46,6 +47,14 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
         };
     }, [isLoading]);
 
+    useEffect(() => {
+        return () => {
+            if (typingInterval) {
+                clearInterval(typingInterval);
+            }
+        };
+    }, [typingInterval]);
+
     const simulateTyping = (text: string) => {
         console.log('Starting typing simulation with text:', text);
         setIsTyping(true);
@@ -72,8 +81,15 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
     const handleAnalyze = async () => {
         if (!userNeed.trim()) return;
         
+        // Clear any existing typing interval
+        if (typingInterval) {
+            clearInterval(typingInterval);
+            setTypingInterval(null);
+        }
+
         setIsLoading(true);
         setAnalysisStatus('interpreting');
+        setCurrentTypedText('');
         
         try {
             console.log('Making API request...');
@@ -105,19 +121,20 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
             let index = 0;
 
             // Simulate natural typing speed
-            const typingInterval = setInterval(() => {
+            const interval = setInterval(() => {
                 if (index < cleanResponse.length) {
                     const nextChar = cleanResponse[index];
                     setCurrentTypedText(prev => prev + nextChar);
                     index++;
                 } else {
-                    clearInterval(typingInterval);
+                    clearInterval(interval);
+                    setTypingInterval(null);
                     setIsTyping(false);
                     setAnalysisStatus('idle');
                 }
-            }, 30); // Faster typing speed
+            }, 30);
 
-            return () => clearInterval(typingInterval);
+            setTypingInterval(interval);
 
         } catch (error) {
             console.error('Error in handleAnalyze:', error);
@@ -125,6 +142,10 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
             setIsLoading(false);
             setIsTyping(false);
             setAnalysisStatus('idle');
+            if (typingInterval) {
+                clearInterval(typingInterval);
+                setTypingInterval(null);
+            }
         }
     };
 
