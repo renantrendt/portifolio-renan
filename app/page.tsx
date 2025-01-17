@@ -7,6 +7,7 @@ import { Github, Linkedin, Instagram, Mail } from 'lucide-react'
 import { XIcon } from './components/x-icon'
 import { MediumIcon } from './components/medium-icon'
 import { SubstackIcon } from './components/substack-icon'
+import { DiscoveryModule } from './components/discovery-module'
 
 export default function Home() {
   const [isAdminMode, setIsAdminMode] = useState(false)
@@ -130,6 +131,7 @@ export default function Home() {
 
       <main className="py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
+          <DiscoveryModule careerData={careerStages} />
           <VerticalTimelineCard 
             initialStages={careerStages} 
             onSave={handleSave}
@@ -140,4 +142,3 @@ export default function Home() {
     </div>
   )
 }
-

@@ -65,7 +65,20 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
+@keyframes fill {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fill-left {
+  animation: fill 8s linear forwards;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -74,4 +87,3 @@
     @apply bg-background text-foreground;
   }
 }
-

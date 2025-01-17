@@ -1,0 +1,177 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+type AnalysisStatus = 'idle' | 'interpreting' | 'matching' | 'thinking' | 'answering';
+
+interface DiscoveryModuleProps {
+    careerData: any;
+}
+
+export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
+    const [userNeed, setUserNeed] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const [currentTypedText, setCurrentTypedText] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [analysisStatus, setAnalysisStatus] = useState<AnalysisStatus>('idle');
+
+    // Efeito para simular a progressão dos estados de análise
+    useEffect(() => {
+        if (!isLoading) return;
+
+        const statusSequence: AnalysisStatus[] = ['interpreting', 'matching', 'thinking', 'answering'];
+        let currentIndex = 0;
+
+        const timings = [2000, 2000, 2000, 1000]; // Tempos ajustados para cada estado
+
+        const updateStatus = () => {
+            if (currentIndex < statusSequence.length) {
+                setAnalysisStatus(statusSequence[currentIndex]);
+                currentIndex++;
+                
+                if (currentIndex < statusSequence.length) {
+                    setTimeout(updateStatus, timings[currentIndex]);
+                }
+            }
+        };
+
+        // Iniciar a sequência
+        setTimeout(updateStatus, timings[0]);
+
+        return () => {
+            // Cleanup não é mais necessário pois estamos usando setTimeout
+        };
+    }, [isLoading]);
+
+    const simulateTyping = (text: string) => {
+        console.log('Starting typing simulation with text:', text);
+        setIsTyping(true);
+        setIsLoading(false);
+        setCurrentTypedText('');
+        let index = 0;
+
+        const typingInterval = setInterval(() => {
+            if (index < text.length) {
+                const nextChar = text[index];
+                setCurrentTypedText(prev => prev + nextChar);
+                index++;
+            } else {
+                console.log('Finished typing');
+                clearInterval(typingInterval);
+                setIsTyping(false);
+                setAnalysisStatus('idle');
+            }
+        }, 50);
+
+        return () => clearInterval(typingInterval);
+    };
+
+    const handleAnalyze = async () => {
+        if (!userNeed.trim()) return;
+        
+        setIsLoading(true);
+        setAnalysisStatus('interpreting');
+        
+        try {
+            const response = await fetch('/api/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    userNeed,
+                    careerData
+                }),
+            });
+
+            const data = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to analyze');
+            }
+
+            const cleanResponse = data.response.trim();
+            simulateTyping(cleanResponse);
+        } catch (error) {
+            console.error('Error:', error);
+            simulateTyping("I apologize, but I'm having trouble analyzing your request right now. Please try again later.");
+            setIsLoading(false);
+            setAnalysisStatus('idle');
+        }
+    };
+
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && !isLoading && userNeed.trim()) {
+            handleAnalyze();
+        }
+    };
+
+    const getStatusMessage = () => {
+        switch (analysisStatus) {
+            case 'interpreting':
+                return ' Sending your needs to AI...';
+            case 'matching':
+                return ' Matching with his experience...';
+            case 'thinking':
+                return ' Thinking about how he can help...';
+            case 'answering':
+                return ' Crafting a response...';
+            default:
+                return '';
+        }
+    };
+
+    return (
+        <Card className="w-full mb-6">
+            <CardHeader>
+                <CardTitle className="text-xl text-center">
+                    {currentTypedText || 'Write here what challenge you are facing and discover if I can help you with.'}
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <div className="flex flex-col gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                        <Input
+                            placeholder="Insert your need here..."
+                            value={userNeed}
+                            onChange={(e) => setUserNeed(e.target.value)}
+                            onKeyDown={handleKeyPress}
+                            className="flex-1 h-10"
+                            disabled={isLoading}
+                        />
+                        <Button 
+                            onClick={handleAnalyze}
+                            className={`bg-primary hover:bg-primary/90 h-10 px-8 sm:w-auto w-full relative overflow-hidden ${
+                                isLoading ? 'cursor-not-allowed' : ''
+                            }`}
+                            disabled={isLoading}
+                        >
+                            {isLoading ? (
+                                <>
+                                    <div className="flex flex-col items-center">
+                                        <span className="text-sm text-white/80">{getStatusMessage()}</span>
+                                    </div>
+                                    <div className="absolute bottom-0 left-0 h-1 bg-white/30 animate-fill-left w-full transform origin-left" 
+                                         style={{
+                                            animation: 'fill 8s linear forwards'
+                                         }}
+                                    />
+                                </>
+                            ) : (
+                                'Discover'
+                            )}
+                        </Button>
+                    </div>
+                </div>
+                {isTyping && (
+                    <div className="text-xl font-medium text-center py-4">
+                        {currentTypedText || '\u200B'}
+                    </div>
+                )}
+            </CardContent>
+        </Card>
+    );
+}
