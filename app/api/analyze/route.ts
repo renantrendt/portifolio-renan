@@ -16,6 +16,7 @@ export async function POST(request: Request) {
         });
 
         const { userNeed, careerData } = await request.json();
+        console.log('Received request:', { userNeed, hasCareerData: !!careerData });
 
         if (!userNeed || !careerData) {
             return NextResponse.json(
@@ -54,6 +55,8 @@ Analyze this user need: ${userNeed}`;
             }]
         });
 
+        console.log('Anthropic response received');
+        
         const rawResponse = message.content[0].text;
         console.log('Raw response:', rawResponse);
         
@@ -71,13 +74,11 @@ Analyze this user need: ${userNeed}`;
                 steps: ['interpreting', 'matching', 'thinking']
             }
         });
+
     } catch (error) {
-        console.error('Error analyzing user need:', error);
+        console.error('API Error:', error);
         return NextResponse.json(
-            { 
-                error: "Failed to analyze the request",
-                details: error instanceof Error ? error.message : 'Unknown error'
-            },
+            { error: "Failed to process request. Please try again." },
             { status: 500 }
         );
     }

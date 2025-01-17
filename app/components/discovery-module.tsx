@@ -76,6 +76,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
         setAnalysisStatus('interpreting');
         
         try {
+            console.log('Making API request...');
             const response = await fetch('/api/analyze', {
                 method: 'POST',
                 headers: {
@@ -88,6 +89,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
             });
 
             const data = await response.json();
+            console.log('API Response:', data);
             
             if (!response.ok) {
                 throw new Error(data.error || 'Failed to analyze');
@@ -96,7 +98,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
             const cleanResponse = data.response.trim();
             simulateTyping(cleanResponse);
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error in handleAnalyze:', error);
             simulateTyping("I apologize, but I'm having trouble analyzing your request right now. Please try again later.");
             setIsLoading(false);
             setAnalysisStatus('idle');
