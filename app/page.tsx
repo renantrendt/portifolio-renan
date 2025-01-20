@@ -75,7 +75,7 @@ export default function Home() {
       title: "Full-stack AI engineering",
       description: "",
       projects: [
-        { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions." },
+        { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions. It's working in alpha phase." },
         { name: "Supabase Row Level Security Policies AI Tester", url: "https://www.npmjs.com/package/supabase-ai-rls-tests-generator", description: "Independently created a package for testing Supabase row-level security policies with AI. It have around 2k organic downloads NPM." },
         { name: "Software for Ukranian Army", url: "https://x.com/Andercot/status/1861925597993460107", description: "Served as Product Manager, identifying the key challenges of the Ukrainian army and translating them into effective solutions. Led a team of 4 developers using Replit, Restack, and OpenBabylon to deploy a working prototype in less than 12 hours." },
         { name: "AutoMac", url: "https://x.com/AlexReibman/status/1860133413338120410", description: "Developed an app that allows non-coders to use Claude Computer Use, control their computers, and create apps effortlessly." },
