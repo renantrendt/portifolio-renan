@@ -26,7 +26,7 @@ export default function Home() {
         { name: "Master of Science", url: "#", description: "Nanotechnological Processes and Protocols for Reducing Nosocomial Infections (#Statistics #Engineering #Research #Protocols #Nanotechnology #Healthcare) – 1st place - University of São Paulo (USP), the top university in Latin America." },
         { name: "Bachelor's in Design for global business", url: "#", description: "Authorial Innovation Methodology - 2nd place - Santa Marcelina University, the best Design University in Latin America." },
         { name: "Extension Programs", url: "#", description: "Bunka (Japan), IED (Spain), and Zaha Hadid's Coding Team" },
-        { name: "Coachs", url: "#", description: "Mochary Method (CEO coach of OpenAI, Coinbase, Brex... Coach: Nancy Xu); Wes Bush (Product led growth – group coaching); Chris Saad (ex-Uber growth)" }
+        { name: "Coaches", url: "#", description: "Mochary Method (CEO coach of OpenAI, Coinbase, Brex... Coach: Nancy Xu); Wes Bush (Product led growth – group coaching); Chris Saad (ex-Uber growth)" }
       ]
     },
     {
