@@ -79,6 +79,7 @@ export default function Home() {
         { name: "Supabase Row Level Security Policies AI Tester", url: "https://www.npmjs.com/package/supabase-ai-rls-tests-generator", description: "Independently created a package for testing Supabase row-level security policies with AI. It have around 2k organic downloads NPM." },
         { name: "Software for Ukranian Army", url: "https://x.com/Andercot/status/1861925597993460107", description: "Served as Product Manager, identifying the key challenges of the Ukrainian army and translating them into effective solutions. Led a team of 4 developers using Replit, Restack, and OpenBabylon to deploy a working prototype in less than 12 hours." },
         { name: "AutoMac", url: "https://x.com/AlexReibman/status/1860133413338120410", description: "Developed an app that allows non-coders to use Claude Computer Use, control their computers, and create apps effortlessly." },
+        { name: "Solana recurring payments", url: "#", description: "Got 3rd place at Solana Blinks hackthon by building a recurring payments app integrated with Shopify." },
         { name: "Youakin", url: "https://www.youakin.com/", description: "Co-built an AI-powered platform for scaling partnership management, with high-profile customers in the tech industry." },
         { name: "Good.inc", url: "https://portal.good.inc/", description: "Independently built a subscription software adapted for brazilian consumer package goods market." }
       ]
