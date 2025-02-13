@@ -72,12 +72,37 @@ This project requires a Claude API key to function:
 
 Your portfolio will be live at a Vercel URL! You can add a custom domain in the Vercel project settings.
 
+## Version Control
+
+To keep your portfolio up to date and sync changes between your local machine and GitHub:
+
+### Pulling Latest Changes
+```bash
+# Get the latest changes from GitHub
+git pull origin main
+```
+
+### Pushing Your Changes
+```bash
+# Add your changes
+git add .
+
+# Commit your changes with a descriptive message
+git commit -m "Your commit message here"
+
+# Push to GitHub
+git push origin main
+```
+
+After pushing, Vercel will automatically deploy your updates.
+
 ## Need Help?
 
 If you encounter any issues:
 1. Check if all environment variables are set correctly
 2. Ensure all dependencies are installed
 3. Try restarting the development server
+4. Make sure your Git repository is properly connected
 
 ## License
 
