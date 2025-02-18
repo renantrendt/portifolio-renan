@@ -38,11 +38,28 @@ export default function Home() {
         { name: "WhitelabelAI", url: "https://whitelabel.ai/", description: "I worked as an AI NLP researcher, enhancing the software's reasoning capabilities, and as a Consultant supporting a strategic pivot that converted the first 25 enterprise customers and secured $117,000 in ARR." },
         { name: "Good.inc (formerly Visto.bio)", url: "https://good.inc/", description: "Founded a CPG company in the longevity space, by discovering that the root of body odor and some hormone imbalance are cause by deodorants, we could patent a solution that helps people live healthier by treating their clothes and at the same time reduce environmental impact by reducing their washing frequency. The company generates $1.5M/year with a 30% profit margin, leveraging a patent co-developed with a UC San Diego researcher." },
         { name: "Financial Turnaround Consulting", description: "Provided independent consultancy services, supporting companies in financial restructuring across diverse industries." },
-        { name: "Cloud Stores", url: "https://youtu.be/OuR552j1gto?si=lylh1VfyQhK4fXV6&t=90", description: "Developed a self-service autonomous brick-and-mortar store powered by RFID, IoT, and computer vision, which was featured in Vice Magazine." }
+        { name: "Trendt", url: "https://trendt.co", description: "A multi-award-winning designer brand focused on developing new materials." }
       ]
     },
     {
       id: '2',
+      title: "Full-stack engineering",
+      description: "",
+      projects: [
+        { name: "Wordware.ai Signals", url: "https://wordware-demo.renanserrano.com.br/", description: "I developed this prototype of an internal customer success tool for Wordware.ai with the goal of understanding their ideal customer profile, leveraging network effects, and gauging customer sentiment by feeding AI with their customers' usage data and real-time support tickets." },
+        { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions. It's working in alpha phase." },
+        { name: "Supabase Row Level Security Policies AI Tester", url: "https://www.npmjs.com/package/supabase-ai-rls-tests-generator", description: "Independently created a package for testing Supabase row-level security policies with AI. It have around 2k organic downloads NPM." },
+        { name: "Software for Ukranian Army", url: "https://x.com/Andercot/status/1861925597993460107", description: "Served as Product Manager, identifying the key challenges of the Ukrainian army and translating them into effective solutions. Led a team of 4 developers using Replit, Restack, and OpenBabylon to deploy a working prototype in less than 12 hours." },
+        { name: "AutoMac", url: "https://x.com/AlexReibman/status/1860133413338120410", description: "Developed an app that allows non-coders to use Claude Computer Use, control their computers, and create apps effortlessly." },
+        { name: "Solana recurring payments", url: "#", description: "Got 3rd place at Solana Blinks hackthon by building a recurring payments app integrated with Shopify." },
+        { name: "Youakin", url: "https://www.youakin.com/", description: "Co-built a platform for scaling partnership management." },
+        { name: "For Good.inc", url: "https://for.good.inc", description: "Built an end-to-end platform for new customers to try the product for free in Brazil and the USA. The platform includes front-end and back-end development, as well as verification with government APIs, BigQuery, Supabase, Brazilian postal addresses, and 3PL." },
+        { name: "Good.inc", url: "https://portal.good.inc/", description: "Independently built a subscription software adapted for brazilian consumer package goods market." },
+        { name: "Cloud Stores", url: "https://youtu.be/OuR552j1gto?si=lylh1VfyQhK4fXV6&t=90", description: "Developed a self-service autonomous brick-and-mortar store powered by RFID, IoT, and computer vision, which was featured in Vice Magazine." }
+      ]
+    },
+    {
+      id: '3',
       title: "Marketing, Growth & Partnership",
       description: "",
       projects: [
@@ -53,7 +70,7 @@ export default function Home() {
       ]
     },
     {
-      id: '3',
+      id: '4',
       title: "Product Management in Deep-tech",
       description: "",
       projects: [
@@ -68,22 +85,6 @@ export default function Home() {
           secondUrl: "https://norte.art.br/work/olympikus-a-camisa-mais-vitoriosa/",
           description: "Open-source technology for recycling mixed-yarn fabrics, including those with spandex (elastane). This award-winning solution is already adopted by industry leaders like New Balance, Lycra, H&M, and Olympikus."
         }
-      ]
-    },
-    {
-      id: '4',
-      title: "Full-stack engineering",
-      description: "",
-      projects: [
-        { name: "Wordware.ai Signals", url: "https://wordware-demo.renanserrano.com.br/", description: "I developed this prototype of an internal customer success tool for Wordware.ai with the goal of understanding their ideal customer profile, leveraging network effects, and gauging customer sentiment by feeding AI with their customers' usage data and real-time support tickets." },
-        { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions. It's working in alpha phase." },
-        { name: "Supabase Row Level Security Policies AI Tester", url: "https://www.npmjs.com/package/supabase-ai-rls-tests-generator", description: "Independently created a package for testing Supabase row-level security policies with AI. It have around 2k organic downloads NPM." },
-        { name: "Software for Ukranian Army", url: "https://x.com/Andercot/status/1861925597993460107", description: "Served as Product Manager, identifying the key challenges of the Ukrainian army and translating them into effective solutions. Led a team of 4 developers using Replit, Restack, and OpenBabylon to deploy a working prototype in less than 12 hours." },
-        { name: "AutoMac", url: "https://x.com/AlexReibman/status/1860133413338120410", description: "Developed an app that allows non-coders to use Claude Computer Use, control their computers, and create apps effortlessly." },
-        { name: "Solana recurring payments", url: "#", description: "Got 3rd place at Solana Blinks hackthon by building a recurring payments app integrated with Shopify." },
-        { name: "Youakin", url: "https://www.youakin.com/", description: "Co-built a platform for scaling partnership management." },
-        { name: "For Good.inc", url: "https://for.good.inc", description: "Built an end-to-end platform for new customers to try the product for free in Brazil and the USA. The platform includes front-end and back-end development, as well as verification with government APIs, BigQuery, Supabase, Brazilian postal addresses, and 3PL." },
-        { name: "Good.inc", url: "https://portal.good.inc/", description: "Independently built a subscription software adapted for brazilian consumer package goods market." }
       ]
     }
   ])
@@ -151,8 +152,8 @@ export default function Home() {
           />
         </div>
       </main>
-      <footer className="text-center text-gray-500 text-sm py-4 mt-8">
-      <a href='https://github.com/renantrendt/portifolio-renan'>Click here to copy this layout for yourself.</a>
+      <footer className="text-center text-gray-500 text-sm pb-10 pt-0 mt-8">
+      <a href='https://github.com/renantrendt/portifolio-renan'>Renan Serrano 2025© – this layout is open source, click here to clone this repository.</a>
       </footer>
     </div>
   )
