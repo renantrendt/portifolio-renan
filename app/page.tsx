@@ -46,6 +46,7 @@ export default function Home() {
       title: "Full-stack engineering",
       description: "",
       projects: [
+        { name: "Small Language Model for Yanomami Tribe", url: "#", description: "Developing a chatGPT-like app that operates offline on smartphones to assist researchers in communicating with remote indigenous tribes in the Amazon." },
         { name: "Wordware.ai Signals", url: "https://wordware-demo.renanserrano.com.br/", description: "I developed this prototype of an internal customer success tool for Wordware.ai with the goal of understanding their ideal customer profile, leveraging network effects, and gauging customer sentiment by feeding AI with their customers' usage data and real-time support tickets." },
         { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions. It's working in alpha phase." },
         { name: "Supabase Row Level Security Policies AI Tester", url: "https://www.npmjs.com/package/supabase-ai-rls-tests-generator", description: "Independently created a package for testing Supabase row-level security policies with AI. It have around 2k organic downloads NPM." },
@@ -71,7 +72,7 @@ export default function Home() {
     },
     {
       id: '4',
-      title: "Product Management in Deep-tech",
+      title: "Product Management & Operations in Deep-tech",
       description: "",
       projects: [
         { name: "Microbiological Research", url: "#", description: "Leading the development of patents to treat acne and recurrent vulvovaginal candidiasis." },
