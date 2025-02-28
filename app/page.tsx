@@ -112,7 +112,7 @@ export default function Home() {
           #Growth #Thinkering #Product #AI #Engineering #Deeptech
         </p>
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-4">
-          <a href="https://gitroll.io/profile/uwcKCWJlKncMd8eEOgwuH85ngYOE2/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+          <a href="https://github.com/renantrendt?tab=overview" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <Github className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
           <a href="https://linkedin.com/in/renanserrano" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
