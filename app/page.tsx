@@ -46,7 +46,7 @@ export default function Home() {
       title: "Full-stack engineering",
       description: "",
       projects: [
-        { name: "Small Language Model for Yanomami Tribe", url: "#", description: "Developing a chatGPT-like app that operates offline on smartphones to assist researchers in communicating with remote indigenous tribes in the Amazon." },
+        { name: "Small Language Model for Yanomami Tribe", url: "https://huggingface.co/renanserrano/yanomami-finetuning", description: "Developing a chatGPT-like app that operates offline on smartphones to assist researchers in communicating with remote indigenous tribes in the Amazon." },
         { name: "AI dataset generator for Finetunning", url: "https://www.npmjs.com/package/ai-dataset-generator", description: "An open-source NPM package to help developers create AI datasets for finetunning models." },
         { name: "Wordware.ai Signals", url: "https://wordware-demo.renanserrano.com.br/", description: "I developed this prototype of an internal customer success tool for Wordware.ai with the goal of understanding their ideal customer profile, leveraging network effects, and gauging customer sentiment by feeding AI with their customers' usage data and real-time support tickets." },
         { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions. It's working in alpha phase." },
