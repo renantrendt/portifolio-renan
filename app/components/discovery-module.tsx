@@ -174,7 +174,7 @@ export function DiscoveryModule({ careerData }: DiscoveryModuleProps) {
         <Card className="w-full mb-6">
             <CardHeader>
                 <CardTitle className="text-xl text-center">
-                    {currentTypedText || 'Skills Match: jot down the challenge you are facing, and AI (Claude) will determine if my skills match your needs'}
+                    {currentTypedText || 'Skills Match, this simple AI RAG determine if my skills match your needs. Write down the challenge you are facing:'}
                 </CardTitle>
             </CardHeader>
             <CardContent>
