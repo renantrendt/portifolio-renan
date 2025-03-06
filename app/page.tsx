@@ -43,7 +43,7 @@ export default function Home() {
     },
     {
       id: '2',
-      title: "Product engineering",
+      title: "Product and Systems Architecture Engineering",
       description: "",
       projects: [
         { name: "Small Language Model for Yanomami Tribe", url: "https://huggingface.co/renanserrano/yanomami-finetuning", description: "Developing a chatGPT-like app that operates offline on smartphones to assist researchers in communicating with remote indigenous tribes in the Amazon." },
