@@ -43,7 +43,7 @@ export default function Home() {
     },
     {
       id: '2',
-      title: "Full-stack engineering",
+      title: "Product engineering",
       description: "",
       projects: [
         { name: "Small Language Model for Yanomami Tribe", url: "https://huggingface.co/renanserrano/yanomami-finetuning", description: "Developing a chatGPT-like app that operates offline on smartphones to assist researchers in communicating with remote indigenous tribes in the Amazon." },
@@ -52,7 +52,7 @@ export default function Home() {
         { name: "Clipboard history Chrome extension with AI search", url: "https://eu.visto.bio/chrome-extension", description: "Created a Chrome extension that saves all my clipboards, auto-pastes them, and includes a search bar to semantically search for old clips using edge functions. It's working in alpha phase." },
         { name: "Supabase Row Level Security Policies AI Tester", url: "https://www.npmjs.com/package/supabase-ai-rls-tests-generator", description: "Independently created a package for testing Supabase row-level security policies with AI. It have around 2k organic downloads NPM." },
         { name: "Youakin", url: "https://www.youakin.com/", description: "Co-built a platform for scaling partnership management." },
-        { name: "For Good.inc", url: "https://for.good.inc", description: "Built an end-to-end platform for new customers to try the product for free in Brazil and the USA. The platform includes front-end and back-end development, as well as verification with government APIs, BigQuery, Supabase, Brazilian postal addresses, and 3PL." },
+        { name: "For Good.inc", url: "https://for.good.inc", description: "Built an end-to-end platform for new customers to try the product for free in Brazil and the USA. The platform includes front-end and back-end development, as well as verification with government APIs, BigQuery, Supabase, Brazilian postal addresses, and 3PL. Also I engineered the product formulation and the patent." },
         { name: "Software for Ukranian Army", url: "https://x.com/Andercot/status/1861925597993460107", description: "Served as Product Manager, identifying the key challenges of the Ukrainian army and translating them into effective solutions. Led a team of 4 developers using Replit, Restack, and OpenBabylon to deploy a working prototype in less than 12 hours." },
         { name: "AutoMac", url: "https://x.com/AlexReibman/status/1860133413338120410", description: "Developed an app that allows non-coders to use Claude Computer Use, control their computers, and create apps effortlessly." },
         { name: "Solana recurring payments", url: "#", description: "Got 3rd place at Solana Blinks hackthon by building a recurring payments app integrated with Shopify." },
