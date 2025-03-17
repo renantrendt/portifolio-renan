@@ -34,7 +34,7 @@ export default function Home() {
       title: "Entrepreneurship & Business Consulting",
       description: "",
       projects: [
-        { name: "VC Scout (A16z & Bain)", url: "", description: "Enabled OpenBabylon to raise from A16z and Bain Capital Ventures. OpenBabylon customize LLMs for underrepresented languages." },
+        { name: "Venture Capital", url: "", description: "Helped OpenBabylon raise funds from A16z and Bain Capital Ventures. I also assisted MightyCapital in sourcing the startup Typedb for their pipeline." },
         { name: "WhitelabelAI", url: "https://whitelabel.ai/", description: "I played two different roles: Customer Success Manager and AI researcher. In the first role, I helped design a strategic pivot that converted the first 25 enterprise B2B SaaS customers, securing $117,000 in ARR. In the second role, I researched and tested SOTA papers to enhance the software's reasoning capabilities." },
         { name: "Good.inc (formerly Visto.bio)", url: "https://for.good.inc/", description: "Founded a CPG company in the longevity space, by discovering that the root of body odor and some hormone imbalance are cause by deodorants, we could patent a solution that helps people live healthier by treating their clothes and at the same time reduce environmental impact by reducing their washing frequency. The company generates $1.5M/year with a 30% profit margin, leveraging a patent co-developed with a UC San Diego researcher." },
         { name: "Financial Turnaround Consulting", description: "Provided independent consultancy services, supporting companies in financial restructuring across diverse industries." },
